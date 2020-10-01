@@ -68,7 +68,7 @@ class FlatGeometry
                 {
                     Console.Clear();
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
-                    Console.WriteLine("Triangle: " + "Basis - " + a + " / Height " + h + "\n");
+                    Console.WriteLine("Triangle: " + "basic - " + a + " / Height " + h + "\n");
 
                     //Calculate perimeter of the traingle
                     double perimeter = a * 3;
@@ -244,7 +244,7 @@ class FlatGeometry
                 double h;
                 string answer;
 
-                Console.WriteLine("Okay, give me both basis, height");
+                Console.WriteLine("Okay, give me both basic, height");
                 a = Convert.ToDouble( Console.ReadLine() );
                 b = Convert.ToDouble( Console.ReadLine() );
                 h = Convert.ToDouble( Console.ReadLine() );
@@ -261,7 +261,7 @@ class FlatGeometry
 
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Console.Clear();
-                        Console.WriteLine("Trapeze: " + "Basis 1 - " + a + " / Basis 2 - " + b + " / Height " + h + "\n");
+                        Console.WriteLine("Trapeze: " + "basic 1 - " + a + " / basic 2 - " + b + " / Height " + h + "\n");
 
                         //Calculate perimeter of the trapeze
                         double perimeter = a + b + c * 2;
@@ -273,7 +273,7 @@ class FlatGeometry
 
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Console.Clear();
-                        Console.WriteLine("Trapeze: " + "Basis 1 - " + a + " / Basis 2 - " + b + " / Height " + h + "\n");
+                        Console.WriteLine("Trapeze: " + "basic 1 - " + a + " / basic 2 - " + b + " / Height " + h + "\n");
 
                         //Calculate perimeter of the trapeze
                         double perimeter = a + b + c + d;

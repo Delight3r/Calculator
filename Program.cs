@@ -24,6 +24,7 @@ namespace Calculator
                 {
                     while(answer != "Back")
                     {  
+                        Console.Clear();
                         Console.WriteLine("What do You want to calculate? (Solids)");
                         Lists("Solids");
                         answer = Console.ReadLine();
