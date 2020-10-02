@@ -13,21 +13,23 @@ namespace Calculator
             //###
             string answer = "";
 
-            Console.WriteLine("What do You want to calculate?");
+            Console.WriteLine("What do You want to calculate?\n");
             Lists("Main menu");
 
             answer = Console.ReadLine();
 
             while(answer != "Exit" || answer != "exit")
             {
-                if(answer == "Solids" || answer == "1")
+                if(answer == "Solids" || answer == "solids" || answer == "1")
                 {
                     while(answer != "Back")
                     {  
                         Console.Clear();
-                        Console.WriteLine("What do You want to calculate? (Solids)");
+
+                        Console.WriteLine("What do You want to calculate? (Solids)\n");
                         Lists("Solids");
                         answer = Console.ReadLine();
+
                         switch(answer)
                         {
                             case "Solids":
@@ -40,15 +42,16 @@ namespace Calculator
                                 break;
                         }
                     }
-                }
-                else if (answer == "Flat geometry" || answer == "Flat Geometry" || answer == "flat Geometry" || answer == "2")
+                } else if (answer == "Flat geometry" || answer == "Flat Geometry" || answer == "flat Geometry" || answer == "2")
                 {
                     while(answer != "Back")
                     {
                         Console.Clear();
-                        Console.WriteLine("What do You want to calculate? (Flat geometry)");
+
+                        Console.WriteLine("What do You want to calculate? (Flat geometry)\n");
                         Lists("Flat geometry");
                         answer = Console.ReadLine();
+
                         switch(answer)
                         {
                             case "Square":
@@ -89,16 +92,16 @@ namespace Calculator
                                 break;
                         }
                     }
-                }
-                else if(answer == "Back" || answer == "back")
+                } else if(answer == "Back" || answer == "back")
                 {
                     Console.Clear();
-                    Console.WriteLine("You are now here: Main menu");
+
+                    Console.WriteLine("You are now here: Main menu\n");
                     Lists("Main menu");
                     answer = Console.ReadLine();
-                }
-                else {
+                } else {
                         Console.Clear();
+
                         Console.WriteLine("I'm sorry, can You repeat? You are here: Main menu");
                         answer = Console.ReadLine();
                 }

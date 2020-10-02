@@ -7,31 +7,10 @@ public class Solids
         {
             string answer;
             string[] basic = {"Square", "Triangle", "Rectangle", "Parallelogram", "Diamond", "Trapeze", "Deltoid", "Circle"};
-            
-            Console.Clear();
 
-            Console.WriteLine("Are Your both basic the same?");
-            answer = Console.ReadLine();
-            while(true)
-            {
-                if(answer == "Yes" || answer == "yes")
-                {
-                    TheSame();
-                    break;
-                } else if(answer == "No" || answer == "no")
-                {
-                    NotTheSame();
-                    break;
-                } else {
-                    Console.WriteLine("I'm sorry, can You repeat?");
-                    answer = Console.ReadLine();
-                }
-            }
-
-            void TheSame()
-            {
                 Console.Clear();
 
+                bool repeat = true;
                 double a;
                 double b;
                 double c;
@@ -39,7 +18,18 @@ public class Solids
                 double h;
                 double solidHeight;
 
-                string answer;
+                double area;
+                double volume;
+                double basicArea;
+                double wallArea;
+                double totalArea;
+                double basicDiagonal;
+                double wallDiagonal;
+                double solidDiagonal;
+                double perimeter;
+                double totalLengthOfSideEdges;
+
+                // string answer;
 
                 Console.WriteLine("What is Your basic?\n");
 
@@ -56,6 +46,9 @@ public class Solids
                 {
                     case "Square":
                     case "1":
+
+                    while (repeat == true)
+                    {
                         Console.Clear();
 
                         Console.WriteLine("What length is Your side edge?");
@@ -64,38 +57,43 @@ public class Solids
                         solidHeight = Convert.ToInt32( Console.ReadLine() );
 
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        double volume = a * a * solidHeight;
+                        volume = a * a * solidHeight;
                         Console.WriteLine("Volume: " + volume);
 
-                        double basicArea = a * a;
+                        basicArea = a * a;
                         Console.WriteLine("basic area: " + basicArea);
 
-                        double wallArea = a * solidHeight;
+                        wallArea = a * solidHeight;
                         Console.WriteLine("Single wall area: " + wallArea + " /and You have 4 walls");
 
-                        double totalArea = (a * a) * 2 + (a * solidHeight) * 4;
+                        totalArea = (a * a) * 2 + (a * solidHeight) * 4;
                         Console.WriteLine("Total area: " + totalArea);
 
-                        double basicDiagonal = Math.Sqrt(a);
+                        basicDiagonal = Math.Sqrt(a);
                         Console.WriteLine("basic diagonal: " + basicDiagonal);
 
-                        double wallDiagonal = Math.Sqrt(a * a + solidHeight * solidHeight);
+                        wallDiagonal = Math.Sqrt(a * a + solidHeight * solidHeight);
                         Console.WriteLine("Wall diagonal: " + wallDiagonal);
 
-                        double solidDiagonal = Math.Sqrt(a * a + a * a + solidHeight * solidHeight);
+                        solidDiagonal = Math.Sqrt(a * a + a * a + solidHeight * solidHeight);
                         Console.WriteLine("Solid diagonal: " + solidDiagonal);
 
-                        if(a == solidHeight)
-                        {
-                            Console.WriteLine("Also this is a cube");
-                        }
-                        Console.ForegroundColor = ConsoleColor.White;
+                            if(a == solidHeight)
+                            {
+                                Console.WriteLine("Also this is a cube");
+                            }
 
-                        Console.ReadKey();
+                        Console.ForegroundColor = ConsoleColor.White;
+                        
+                        Repeat(ref repeat, "solid");
+                    }
                         break;
                     
                     case "Triangle":
                     case "2":
+
+                    while (repeat == true)
+                    {
                         bool done = false;
                         while(done == false)
                         {
@@ -176,13 +174,19 @@ public class Solids
                                     Console.WriteLine("Is this equilateral triangle?");
                                     answer = Console.ReadLine();
                                 }
-                            }
+                        }
 
-                        Console.ReadKey();
+                        Console.ForegroundColor = ConsoleColor.White;
+
+                        Repeat(ref repeat, "solid");
+
+                        }
                         break;
 
                     case "Rectangle":
                     case "3":
+                    while (repeat == true)
+                    {
                         Console.Clear();
 
                         Console.WriteLine("What length is Your both side edges?");
@@ -223,18 +227,21 @@ public class Solids
                         solidDiagonal = Math.Sqrt(a * a + b * b + solidHeight * solidHeight);
                         Console.WriteLine("Solid diagonal: " + solidDiagonal);
 
-                        if(a == b && a == solidHeight)
-                        {
-                            Console.WriteLine("Also this is a cube");
-                        }
+                            if(a == b && a == solidHeight)
+                            {
+                                Console.WriteLine("Also this is a cube");
+                            }
                         Console.ForegroundColor = ConsoleColor.White;
+                        
+                        Repeat(ref repeat, "solid");
 
-                        Console.ReadKey();
-
+                        }
                         break;
 
                     case "Parallelogram":
                     case "4":
+                    while (repeat == true)
+                    {
                         Console.Clear();
                         //Calculate basic
                         Console.WriteLine("Okay, so give me side edges, and the height of the basic");
@@ -249,10 +256,10 @@ public class Solids
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                         Console.WriteLine("Solid (Parallelogram): " + "basic edge 1 - " + a + " / basic edge 2 - " + b + " / basic height - " + h + " / Solid height - " + solidHeight + "\n");
                         
-                        double area = a * h;
+                        area = a * h;
                         Console.WriteLine("Base area = " + area);
 
-                        double perimeter = a * 2 + b * 2;
+                        perimeter = a * 2 + b * 2;
                         Console.WriteLine("Base perimeter = " + perimeter);
 
                         wallArea = a * solidHeight;
@@ -270,17 +277,20 @@ public class Solids
                         solidDiagonal = Math.Sqrt(a * a + b * b + solidHeight * solidHeight);
                         Console.WriteLine("Solid diagonal = " + solidDiagonal);
 
-                        double totalLengthOfSideEdges = a * 4 + b * 4 + solidHeight * 4;
+                        totalLengthOfSideEdges = a * 4 + b * 4 + solidHeight * 4;
                         Console.WriteLine("Total area of side edges = " + totalLengthOfSideEdges);
                         
                         Console.ForegroundColor = ConsoleColor.White;
 
-                        Console.ReadKey();
+                        Repeat(ref repeat, "solid");
 
+                        }
                         break;
                     
                     case "Diamond":
                     case "5":
+                    while (repeat == true)
+                    {
                         Console.Clear();
 
                         Console.WriteLine("Okay, give me one side edge and height of the basic");
@@ -316,13 +326,16 @@ public class Solids
                         Console.WriteLine("Total area of side edges = " + totalLengthOfSideEdges);
                         
                         Console.ForegroundColor = ConsoleColor.White;
+                        
+                        Repeat(ref repeat, "solid");
 
-                        Console.ReadKey();
-
+                        }
                         break;
 
                     case "Trapeze":
                     case "6":
+                    while (repeat == true)
+                    {
                         Console.Clear();
 
                         Console.WriteLine("Okay, give me both basics and height of the trapeze");
@@ -332,7 +345,7 @@ public class Solids
                         Console.WriteLine("Okay, now give me height of the solid");
                         solidHeight = Convert.ToDouble( Console.ReadLine() );
 
-                        done = false;
+                        bool done = false;
 
                         Console.WriteLine("Is this isosceles trapezoid? Yes/No");
                         answer = Console.ReadLine();
@@ -425,14 +438,18 @@ public class Solids
                             }
                         }
                         Console.ForegroundColor = ConsoleColor.White;
+                        
+                        Repeat(ref repeat, "solid");
 
-                        Console.ReadKey();
-
+                        }
                         break;
 
                     case "Deltoid":
                     case "7":
+                    while (repeat == true)
+                    {
                         Console.Clear();
+
                         Console.WriteLine("Okay, so I'm gonna need both side edges, and both diagonals of the basic");
                 
                         a = Convert.ToDouble( Console.ReadLine() );
@@ -469,14 +486,16 @@ public class Solids
                         Console.WriteLine("Volume = " + volume);
 
                         Console.ForegroundColor = ConsoleColor.White;
+                        
+                        Repeat(ref repeat, "solid");
 
-                        Console.ReadKey();
-
+                        }
                         break;
                     
                     case "Circle":
                     case "8":
-
+                    while (repeat == true)
+                    {
                         Console.Clear();
 
                         Console.WriteLine("Okay, so give me radius, and the solid height");
@@ -503,35 +522,27 @@ public class Solids
                         Console.WriteLine("Total area = " + totalArea);
 
                         Console.ForegroundColor = ConsoleColor.White;
+                        
+                        Repeat(ref repeat, "solid");
 
-                        Console.ReadKey();
-
+                        }
                         break;
-
                     default:
                     break;
                 }
 
                 Console.Clear();
-            }
+    }
 
-            void NotTheSame()
-            {
-                Console.Clear();
+    public static void Repeat(ref bool repeat, string whichType)
+    {
+        Console.WriteLine("\nIf You want to calculate next " + whichType + ", write 'Yes', otherwise, press enter");
+        string answer = Console.ReadLine();
 
-                string basisOne;
-                string basisTwo;
-
-                foreach(string item in basic)
-                {
-                    Console.WriteLine(item);
-                }
-
-                Console.WriteLine("What is Your first basic?\n");
-                basisOne = Console.ReadLine();
-                Console.WriteLine("What is Your first basic?\n");
-                basisTwo = Console.ReadLine();
-
+            if(answer == "Yes" || answer == "yes") {
+                repeat = true;
+            } else {
+                repeat = false;
             }
         }
-}
+    }

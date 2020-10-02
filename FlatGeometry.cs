@@ -4,8 +4,8 @@ class FlatGeometry
 {
     static public void Square()
         {
-            string repeat;
-            while (true)
+            bool repeat = true;
+            while (repeat == true)
             {
                 Console.Clear();
                 double a;
@@ -30,16 +30,7 @@ class FlatGeometry
                 Console.WriteLine("The perimeter of the square = " + perimeter);
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("\nIf You want to calculate next Square, write 'repeat', if not, press enter");
-                 
-                repeat = Console.ReadLine();
-                if(repeat == "repeat")
-                {
-                    continue;
-                }
-                else {
-                    break;
-                }
+                Solids.Repeat(ref repeat, "shape");
             }
         }
 
@@ -56,10 +47,11 @@ class FlatGeometry
                 double h;
 
                 string answer;
-                Console.WriteLine("Okay, so give me these parametres: \nBasis \nHeight");
+                Console.WriteLine("Okay, so give me side edge and the height");
                 a = Convert.ToDouble( Console.ReadLine() );
                 h = Convert.ToDouble( Console.ReadLine() );
 
+                Console.Clear();
                 Console.WriteLine("Is this equilateral triangle? Yes/No");
 
                 answer = Console.ReadLine();
@@ -67,18 +59,22 @@ class FlatGeometry
                 if(answer == "Yes" || answer == "yes")
                 {
                     Console.Clear();
+
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
-                    Console.WriteLine("Triangle: " + "basic - " + a + " / Height " + h + "\n");
+                    Console.WriteLine("Triangle: " + "basic - " + a + " / Height - " + h + "\n");
 
                     //Calculate perimeter of the traingle
                     double perimeter = a * 3;
                     Console.WriteLine("Perimeter of the triangle = " + perimeter);
                 } else {
+                    Console.Clear();
+
                     Console.WriteLine("Okay, so I'm gonna need two more side edges");
                     b = Convert.ToDouble( Console.ReadLine() );
                     c = Convert.ToDouble( Console.ReadLine() );
                     
                     Console.Clear();
+
                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine("Triangle: " + " Side edge 1 - " + a + " / Side edge 2 - " + b + " / Side edge 3 - " + c + " / Height - " + h + "\n");
 
@@ -107,8 +103,8 @@ class FlatGeometry
 
         static public void Rectangle()
         {
-            string repeat;
-            while (true)
+            bool repeat = true;
+            while (repeat == true)
             {
                 Console.Clear();
 
@@ -121,6 +117,7 @@ class FlatGeometry
 
                 
                 Console.Clear();
+
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Rectangle: " + "Side edge 1 - " + a + " / Side edge 2 - " + b + "\n");
                 //Calculate area of the rectangle
@@ -136,23 +133,15 @@ class FlatGeometry
                 Console.WriteLine("perimeter of the rectangle = " + perimeter);
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("\nIf You want to calculate next Rectangle, write 'repeat', if not, press enter");
-                 
-                repeat = Console.ReadLine();
-                if(repeat == "repeat")
-                {
-                    continue;
-                }
-                else {
-                    break;
-                }
+                
+                Solids.Repeat(ref repeat, "shape");
             }
         }
 
         static public void Parallelogram()
         {
-            string repeat;
-            while(true)
+            bool repeat = true;
+            while(repeat == true)
             {
                 Console.Clear();
 
@@ -166,6 +155,7 @@ class FlatGeometry
                 h = Convert.ToDouble( Console.ReadLine() );
 
                 Console.Clear();
+
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.WriteLine("Parallelogram: " + "Side edge 1 - " + a + " / Side edge 2 - " + " / Height " + h + "\n");
                 //Calculate parallelogram area
@@ -177,23 +167,16 @@ class FlatGeometry
                 Console.WriteLine("Parallelogram perimeter = " + perimeter);
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("\nIf You want to calculate next Parallelogram, write 'repeat', if not, press enter");
-                 
-                repeat = Console.ReadLine();
-                if(repeat == "repeat")
-                {
-                    continue;
-                }
-                else {
-                    break;
-                }
+                
+                Solids.Repeat(ref repeat, "shape");
+
             }
         }
 
         static public void Diamond()
         {
-            string repeat;
-            while(true)
+            bool repeat = false;
+            while(repeat == true)
             {
                 Console.Clear();
 
@@ -204,10 +187,11 @@ class FlatGeometry
                 a = Convert.ToDouble( Console.ReadLine() );
                 h = Convert.ToDouble( Console.ReadLine() );
 
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.WriteLine("Diamond: " + " Side edge 1 - " + a + " / Height " + h + "\n");
+                Console.Clear();
 
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine("Diamond: " + " Side edge 1 - " + a + " / Height - " + h + "\n");
+
                 //Calculate diamond area
                 double area = a * h;
                 Console.WriteLine("Diamond area = " + area);
@@ -217,23 +201,15 @@ class FlatGeometry
                 Console.WriteLine("Diamond perimeter = " + perimeter);
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("\nIf You want to calculate next Diamond, write 'repeat', if not, press enter");
-                 
-                repeat = Console.ReadLine();
-                if(repeat == "repeat")
-                {
-                    continue;
-                }
-                else {
-                    break;
-                }
+
+                Solids.Repeat(ref repeat, "shape");
             }
         }
 
         static public void Trapeze()
         {
-            string repeat;
-            while (true)
+            bool repeat = true;
+            while (repeat == true)
             {
                 Console.Clear();
 
@@ -295,23 +271,14 @@ class FlatGeometry
                 Console.WriteLine("Trapeze area = " + area);
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("\nIf You want to calculate next Trapeze, write 'repeat', if not, press enter");
-                 
-                repeat = Console.ReadLine();
-                if(repeat == "repeat")
-                {
-                    continue;
-                }
-                else {
-                    break;
-                }
+                Solids.Repeat(ref repeat, "shape");
             }
         }
 
         static public void Circle()
         {
-            string repeat;
-            while(true)
+            bool repeat = true;
+            while(repeat == true)
             {
                 Console.Clear();
 
@@ -333,23 +300,14 @@ class FlatGeometry
                 Console.WriteLine("Circle perimeter = " + perimeter);
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("\nIf You want to calculate next Circle, write 'repeat', if not, press enter");
-                 
-                repeat = Console.ReadLine();
-                if(repeat == "repeat")
-                {
-                    continue;
-                }
-                else {
-                    break;
+                Solids.Repeat(ref repeat, "shape");
                 }
             }
-        }
 
         static public void Deltoid()
         {
-            string repeat;
-            while(true)
+            bool repeat = true;
+            while(repeat == true)
             {
                 Console.Clear();
 
@@ -377,16 +335,7 @@ class FlatGeometry
                 Console.WriteLine("Delotid perimeter = " + perimeter);
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("\nIf You want to calculate next Deltoid, write 'repeat', if not, press enter");
-                 
-                repeat = Console.ReadLine();
-                if(repeat == "repeat")
-                {
-                    continue;
-                }
-                else {
-                    break;
-                }
+                Solids.Repeat(ref repeat, "shape");
             }
         }
 }
