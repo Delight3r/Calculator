@@ -11,7 +11,8 @@ class FlatGeometry
                 double a;
 
                 Console.WriteLine("Okay, so give me side edge");
-                a = Convert.ToDouble (Console.ReadLine() );
+
+                a = Convert.ToDouble( Console.ReadLine() );
 
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -30,14 +31,14 @@ class FlatGeometry
                 Console.WriteLine("The perimeter of the square = " + perimeter);
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Solids.Repeat(ref repeat, "shape");
+                Solids.Repeat(ref repeat, "square");
             }
         }
 
         static public void Triangle()
         {
-            string repeat;
-            while(true)
+            bool repeat = true;
+            while(repeat == true)
             {
                 Console.Clear();
 
@@ -86,18 +87,9 @@ class FlatGeometry
                 //Calculate triangle area
                 double area = a * h / 2;
                 Console.WriteLine("Triangle area = " + area);
-
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("\nIf You want to calculate next Triangle, write 'repeat', if not, press enter");
                  
-                repeat = Console.ReadLine();
-                if(repeat == "repeat")
-                {
-                    continue;
-                }
-                else {
-                    break;
-                }
+                Console.ForegroundColor = ConsoleColor.White;
+                Solids.Repeat(ref repeat, "triangle");
             }
         }
 
@@ -134,7 +126,7 @@ class FlatGeometry
 
                 Console.ForegroundColor = ConsoleColor.White;
                 
-                Solids.Repeat(ref repeat, "shape");
+                Solids.Repeat(ref repeat, "rectangle");
             }
         }
 
@@ -168,14 +160,13 @@ class FlatGeometry
 
                 Console.ForegroundColor = ConsoleColor.White;
                 
-                Solids.Repeat(ref repeat, "shape");
-
+                Solids.Repeat(ref repeat, "parallelogram");
             }
         }
 
         static public void Diamond()
         {
-            bool repeat = false;
+            bool repeat = true;
             while(repeat == true)
             {
                 Console.Clear();
@@ -202,7 +193,7 @@ class FlatGeometry
 
                 Console.ForegroundColor = ConsoleColor.White;
 
-                Solids.Repeat(ref repeat, "shape");
+                Solids.Repeat(ref repeat, "diamond");
             }
         }
 
@@ -228,7 +219,7 @@ class FlatGeometry
                 Console.WriteLine("Is this isosceles trapezoid? Yes/No");
                 answer = Console.ReadLine();
 
-                while (true)
+                while(true)
                 {
                     if(answer == "Yes" || answer == "yes")
                     {
@@ -242,6 +233,8 @@ class FlatGeometry
                         //Calculate perimeter of the trapeze
                         double perimeter = a + b + c * 2;
                         Console.WriteLine("Trapeze perimeter = " + perimeter);
+
+                        break;
                     } else if(answer == "No" || answer == "no") {
                         Console.WriteLine("Okay, so I'm gonna need two more side edges");
                         c = Convert.ToDouble( Console.ReadLine() );
@@ -254,6 +247,7 @@ class FlatGeometry
                         //Calculate perimeter of the trapeze
                         double perimeter = a + b + c + d;
                         Console.WriteLine("Trapeze perimeter = " + perimeter);
+                        break;
                     } else {
                         while(answer != "Yes" || answer != "yes" || answer != "No" || answer != "no")
                         {
@@ -265,13 +259,12 @@ class FlatGeometry
                         break;
                     }
                 }
-
                 //Calculate area of the trapeze
                 double area = ((a + b) / 2) * h;
                 Console.WriteLine("Trapeze area = " + area);
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Solids.Repeat(ref repeat, "shape");
+                Solids.Repeat(ref repeat, "trapeze");
             }
         }
 
@@ -300,7 +293,7 @@ class FlatGeometry
                 Console.WriteLine("Circle perimeter = " + perimeter);
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Solids.Repeat(ref repeat, "shape");
+                Solids.Repeat(ref repeat, "circle");
                 }
             }
 
@@ -335,7 +328,7 @@ class FlatGeometry
                 Console.WriteLine("Delotid perimeter = " + perimeter);
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Solids.Repeat(ref repeat, "shape");
+                Solids.Repeat(ref repeat, "deltoid");
             }
         }
 }

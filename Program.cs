@@ -18,33 +18,19 @@ namespace Calculator
 
             answer = Console.ReadLine();
 
-            while(answer != "Exit" || answer != "exit")
+            while(answer != "Exit" || answer != "exit") // Main loop for main menu
             {
-                if(answer == "Solids" || answer == "solids" || answer == "1")
+                if(answer == "Solids" || answer == "solids" || answer == "1") // Checking if answer is for solids...
                 {
                     while(answer != "Back")
                     {  
                         Console.Clear();
-
-                        Console.WriteLine("What do You want to calculate? (Solids)\n");
-                        Lists("Solids");
-                        answer = Console.ReadLine();
-
-                        switch(answer)
-                        {
-                            case "Solids":
-                            case "1":
-                                Solids.SolidsFunc();
-                                break;
-                            default: 
-                                Console.Clear();
-                                Console.WriteLine("I'm sorry, can You repeat?");
-                                break;
-                        }
+                        Solids.SolidsFunc();
+                        Solids.Exit(ref answer);
                     }
-                } else if (answer == "Flat geometry" || answer == "Flat Geometry" || answer == "flat Geometry" || answer == "2")
+                } else if (answer == "Flat geometry" || answer == "Flat Geometry" || answer == "flat Geometry" || answer == "2") // ... or flat geometry
                 {
-                    while(answer != "Back")
+                    while(answer != "Back") // Loop for flat geometry with switch. Breaking if You'll type "back".
                     {
                         Console.Clear();
 
@@ -52,47 +38,62 @@ namespace Calculator
                         Lists("Flat geometry");
                         answer = Console.ReadLine();
 
+                        //Switch that checks which shape you want to calculate
                         switch(answer)
                         {
                             case "Square":
                             case "1":
+                            {
                                 FlatGeometry.Square();
                                 break;
+                            }
                             case "Triangle":
                             case "2":
+                            {
                                 FlatGeometry.Triangle();
                                 break;
+                            }
                             case "Rectangle":
                             case "3":
+                            {
                                 FlatGeometry.Rectangle();
                                 break;
+                            }
                             case "Parallelogram":
                             case "4":
+                            {
                                 FlatGeometry.Parallelogram();
                                 break;
+                            }
                             case "Diamond":
                             case "5":
+                            {
                                 FlatGeometry.Diamond();
                                 break;
+                            }
                             case "Trapeze":
                             case "6":
+                            {
                                 FlatGeometry.Trapeze();
                                 break;
+                            }
                             case "Circle":
                             case "7":
+                            {
                                 FlatGeometry.Circle();
                                 break;
+                            }
                             case "Deltoid":
                             case "8":
+                            {
                                 FlatGeometry.Deltoid();
                                 break;
-                            default: 
-                                Console.Clear();
-                                Console.WriteLine("\nI'm sorry, can You repeat?");
+                            }
+                            default:
                                 break;
                         }
                     }
-                } else if(answer == "Back" || answer == "back")
+                } else if(answer == "Back" || answer == "back") //If statement that makes you can go back
                 {
                     Console.Clear();
 
@@ -102,7 +103,8 @@ namespace Calculator
                 } else {
                         Console.Clear();
 
-                        Console.WriteLine("I'm sorry, can You repeat? You are here: Main menu");
+                        Console.WriteLine("I'm sorry, can You repeat? You are here: Main menu\n");
+                        Lists("Main menu");
                         answer = Console.ReadLine();
                 }
             }
@@ -110,6 +112,8 @@ namespace Calculator
         
         static public void Lists(string whichList)
         {
+            // Function that let me to show different arrays...
+            // ...in code without repeating code
             int counter = 1;
             string[] MmList = {"Solids", "Flat geometry"};
             string[] FgList = {"Square", "Triangle", "Rectangle", "Parallelogram", "Diamond", "Trapeze", "Circle", "Deltoid"};
