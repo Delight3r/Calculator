@@ -110,7 +110,7 @@ namespace Calculator
             }
         }
         
-        static public void Lists(string whichList)
+        public static void Lists(string whichList)
         {
             // Function that let me to show different arrays...
             // ...in code without repeating code

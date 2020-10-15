@@ -2,7 +2,7 @@ using System;
 
 class FlatGeometry
 {
-    static public void Square()
+    public static void Square()
         {
             bool repeat = true;
             while (repeat == true)
@@ -35,7 +35,7 @@ class FlatGeometry
             }
         }
 
-        static public void Triangle()
+        public static void Triangle()
         {
             bool repeat = true;
             while(repeat == true)
@@ -93,7 +93,7 @@ class FlatGeometry
             }
         }
 
-        static public void Rectangle()
+        public static void Rectangle()
         {
             bool repeat = true;
             while (repeat == true)
@@ -130,7 +130,7 @@ class FlatGeometry
             }
         }
 
-        static public void Parallelogram()
+        public static void Parallelogram()
         {
             bool repeat = true;
             while(repeat == true)
@@ -164,7 +164,7 @@ class FlatGeometry
             }
         }
 
-        static public void Diamond()
+        public static void Diamond()
         {
             bool repeat = true;
             while(repeat == true)
@@ -197,7 +197,7 @@ class FlatGeometry
             }
         }
 
-        static public void Trapeze()
+        public static void Trapeze()
         {
             bool repeat = true;
             while (repeat == true)
@@ -268,7 +268,7 @@ class FlatGeometry
             }
         }
 
-        static public void Circle()
+        public static void Circle()
         {
             bool repeat = true;
             while(repeat == true)
@@ -297,7 +297,7 @@ class FlatGeometry
                 }
             }
 
-        static public void Deltoid()
+        public static void Deltoid()
         {
             bool repeat = true;
             while(repeat == true)
